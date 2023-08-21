@@ -1,0 +1,34 @@
+project: my_project
+registry:
+  registry_type: snowflake.registry
+  type: snowflake.registry
+  account: {{ SNOWFLAKE_ACCOUNT }}
+  user: {{ SNOWFLAKE_USER }}
+  password: {{ SNOWFLAKE_PASSWORD }}
+  role: {{ SNOWFLAKE_ROLE }}
+  warehouse: {{ SNOWFLAKE_WAREHOUSE }}
+  database: {{ SNOWFLAKE_DATABASE }}
+  schema: {{ SNOWFLAKE_REGISTRY_SCHEMA }}
+  cache_ttl_seconds: 0
+provider: local
+offline_store:
+  type: snowflake.offline
+  account: {{ SNOWFLAKE_ACCOUNT }}
+  user: {{ SNOWFLAKE_USER }}
+  password: {{ SNOWFLAKE_PASSWORD }}
+  role: {{ SNOWFLAKE_ROLE }}
+  warehouse: {{ SNOWFLAKE_WAREHOUSE }}
+  database: {{ SNOWFLAKE_DATABASE }}
+  schema: {{ SNOWFLAKE_OFFLINE_STORE_SCHEMA }}
+batch_engine:
+  type: snowflake.engine
+  account: {{ SNOWFLAKE_ACCOUNT }}
+  user: {{ SNOWFLAKE_USER }}
+  password: {{ SNOWFLAKE_PASSWORD }}
+  role: {{ SNOWFLAKE_ROLE }}
+  warehouse: {{ SNOWFLAKE_WAREHOUSE }}
+  database: {{ SNOWFLAKE_DATABASE }}
+online_store:
+  type: redis
+  connection_string: "localhost:6379"
+entity_key_serialization_version: 2
